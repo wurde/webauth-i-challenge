@@ -31,6 +31,7 @@ app.use(express.json())
  */
 
 app.use('/', require('./routes/root_router'))
+app.use('/users', require('./routes/users_router'))
 
 /**
  * Start server
@@ -41,3 +42,9 @@ if (module === require.main) {
     console.log(`Express running on port ${port}`)
   })
 }
+
+/**
+ * Export app
+ */
+
+module.exports = app
