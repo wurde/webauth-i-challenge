@@ -16,7 +16,7 @@ class User {
   }
 
   static find(filter) {
-    return db_client('users').where(filter)
+    return db_client('users').where(filter).first()
   }
 
   static async create(user) {

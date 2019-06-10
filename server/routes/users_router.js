@@ -25,7 +25,7 @@ router.route('/')
 
 /**
  * Routes
- *   POST /users/register
+ *   GET,POST /users/register
  */
 
 router.route('/register')
@@ -34,7 +34,7 @@ router.route('/register')
 
 /**
  * Routes
- *   POST /users/login
+ *   GET,POST /users/login
  */
 
 router.route('/login')
