@@ -5,6 +5,7 @@
  */
 
 const express = require('express')
+const UsersController = require('../controllers/UsersController')
 
 /**
  * Define app
@@ -18,9 +19,7 @@ const router = express.Router()
  */
 
 router.route('/')
-  .get((req, res) => {
-    res.status(200).json([{username: 'John'}, {username: 'Jane'}])
-  })
+  .get(UsersController.index)
 
 /**
  * Routes
@@ -28,9 +27,7 @@ router.route('/')
  */
 
 router.route('/register')
-  .post((req, res) => {
-    res.sendStatus(200)
-  })
+  .post(UsersController.register)
 
 /**
  * Routes
@@ -38,9 +35,7 @@ router.route('/register')
  */
 
 router.route('/login')
-  .post((req, res) => {
-    res.sendStatus(200)
-  })
+  .post(UsersController.login)
 
 /**
  * Export router
