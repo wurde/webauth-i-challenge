@@ -6,6 +6,7 @@
 
 const express = require('express')
 const UsersController = require('../controllers/UsersController')
+const auth_user = require('../middleware/auth_user')
 
 /**
  * Define app
@@ -19,6 +20,7 @@ const router = express.Router()
  */
 
 router.route('/')
+  .all(auth_user)
   .get(UsersController.index)
 
 /**
@@ -27,6 +29,7 @@ router.route('/')
  */
 
 router.route('/register')
+  .get(UsersController.register_prompt)
   .post(UsersController.register)
 
 /**
@@ -35,6 +38,7 @@ router.route('/register')
  */
 
 router.route('/login')
+  .get(UsersController.login_prompt)
   .post(UsersController.login)
 
 /**
