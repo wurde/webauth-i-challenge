@@ -18,5 +18,12 @@
   "bugs": {
     "url": "https://github.com/wurde/webauth-i-challenge/issues"
   },
-  "homepage": "https://github.com/wurde/webauth-i-challenge#readme"
+  "homepage": "https://github.com/wurde/webauth-i-challenge#readme",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "express": "^4.17.1",
+    "helmet": "^3.18.0",
+    "knex": "^0.17.5",
+    "sqlite3": "^4.0.8"
+  }
 }
