@@ -12,7 +12,8 @@ const User = require('../models/User')
 
 class UsersController {
   static async index(req, res) {
-    res.status(200).json([{username: 'John'}, {username: 'Jane'}])
+    let users = await User.all()
+    res.status(200).json(users)
   }
 
   static async register(req, res) {
