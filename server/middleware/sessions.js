@@ -22,7 +22,7 @@ const config = {
   name: 'user_session',
   secret: '2269031b034acc2650e39d07b9932802c8b0c916498b6b74640e166cb8710c729fd2df6ec47917d09f85f614de95d9996c0725d662129d3adb44ef479d623004',
   cookie: {
-    maxAge: new Date(Date.now() + (20 * 365 * 24 * 60 * 60 * 1000)),
+    maxAge: 1000 * 60 * 10,
     secure: false,
     httpOnly: true,
   },

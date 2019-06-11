@@ -1,13 +1,6 @@
 'use strict'
 
 /**
- * Dependencies
- */
-
-const bcrypt = require('bcryptjs')
-const User = require('../models/User.js')
-
-/**
  * Define middleware
  */
 

@@ -45,7 +45,7 @@ class UsersController {
     try {
       let user = await User.find({ username: req.body.username })
 
-      if (user && bcrypt.compareSync(req.body.password, user.password)) {
+      if (user && bcrypt.compareSync(req.body.password, user.password_hash)) {
         req.session.username = user.username;
         res.status(200).json({ errors: { message: `Welcome ${user.username}!` } })
       } else {
