@@ -19,6 +19,7 @@ const router = express.Router()
 
 router.route('/')
   .get((req, res) => {
+    req.session.name = 'Frodo'
     res.redirect('/home')
   })
 
@@ -29,7 +30,7 @@ router.route('/')
 
 router.route('/home')
   .get((req, res) => {
-    res.status(200).send('Welcome Home')
+    res.status(200).send(`Welcome Home: ${req.session.name}`)
   })
 
 /**
