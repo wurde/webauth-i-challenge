@@ -12,18 +12,10 @@ const User = require('../models/User.js')
  */
 
 async function auth_user(req, res, next) {
-  const { username, password } = req.headers
-
-  if (username, password) {
-    let user = await User.find({ username: username })
-
-    if (user && bcrypt.compareSync(password, user.password_hash)) {
-      next()
-    } else {
-      res.redirect('/users/login')
-    }
+  if (req.session && req.session.username) {
+    next()
   } else {
-    res.status(400).json({ errors: { message: 'Please provide credentials.' } })
+    res.redirect('/users/login')
   }
 }
 
