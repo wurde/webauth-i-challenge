@@ -55,6 +55,19 @@ class UsersController {
       res.status(500).json({ errors: { message: 'Server error' } })
     }
   }
+
+  static async logout(req, res) {
+    try {
+      if (req.session) {
+        req.session.destroy()
+      }
+
+      res.status(200).json({ errors: { message: 'Logged out successfully.' } })
+    } catch(err) {
+      console.error(err)
+      res.status(500).json({ errors: { message: 'Server error' } })
+    }
+  }
 }
 
 /**
