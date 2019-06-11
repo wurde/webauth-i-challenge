@@ -43,13 +43,16 @@ class Login extends Component {
       <LoginStyle>
         <div className="container">
           <div className="row justify-content-center">
-            <div className="col-10 col-md-8 col-lg-5">
+            <div className="col-10 col-md-8 col-lg-5" style={{ marginTop: '80px' }}>
+              <h3>Login</h3>
 
               <form onSubmit={this.handleOnSubmit}>
-                <TextField required id="input-username" label="username" onChange={this.handleOnChange} />
-                <TextField required id="input-password" label="password" onChange={this.handleOnChange} />
+                <TextField required id="input-username" label="username" fullWidth onChange={this.handleOnChange} />
+                <TextField required id="input-password" label="password" type="password" fullWidth onChange={this.handleOnChange} />
+                <br/>
+                <br/>
 
-                <Button variant="contained" color="primary">
+                <Button variant="contained" color="primary" fullWidth>
                   Continue
                 </Button>
               </form>
