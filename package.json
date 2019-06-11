@@ -1,0 +1,32 @@
+{
+  "name": "webauth-i-challenge",
+  "version": "0.1.0",
+  "description": "WEB AUTH I Challenge",
+  "main": "server/app.js",
+  "private": true,
+  "scripts": {
+    "start": "node server/app.js",
+    "start:dev": "nodemon server/app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/wurde/webauth-i-challenge.git"
+  },
+  "keywords": [],
+  "author": "Andy Bettisworth",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/wurde/webauth-i-challenge/issues"
+  },
+  "homepage": "https://github.com/wurde/webauth-i-challenge#readme",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "express": "^4.17.1",
+    "helmet": "^3.18.0",
+    "knex": "^0.17.5",
+    "sqlite3": "^4.0.8"
+  },
+  "devDependencies": {
+    "nodemon": "^1.19.1"
+  }
+}
