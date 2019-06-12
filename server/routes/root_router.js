@@ -19,17 +19,7 @@ const router = express.Router()
 
 router.route('/')
   .get((req, res) => {
-    res.redirect('/home')
-  })
-
-/**
- * Routes
- *   GET /home
- */
-
-router.route('/home')
-  .get((req, res) => {
-    res.status(200).send('Welcome Home')
+    res.sendStatus(200)
   })
 
 /**

@@ -45,11 +45,25 @@ class UsersController {
     try {
       let user = await User.find({ username: req.body.username })
 
-      if (user && bcrypt.compareSync(req.body.password, user.password)) {
+      if (user && bcrypt.compareSync(req.body.password, user.password_hash)) {
+        req.session.username = user.username
         res.status(200).json({ errors: { message: `Welcome ${user.username}!` } })
       } else {
         res.status(401).json({ errors: { message: 'Invalid Credentials' } })
       }
+    } catch(err) {
+      console.error(err)
+      res.status(500).json({ errors: { message: 'Server error' } })
+    }
+  }
+
+  static async logout(req, res) {
+    try {
+      if (req.session) {
+        req.session.destroy()
+      }
+
+      res.status(200).json({ errors: { message: 'Logged out successfully.' } })
     } catch(err) {
       console.error(err)
       res.status(500).json({ errors: { message: 'Server error' } })

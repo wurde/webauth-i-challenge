@@ -42,6 +42,15 @@ router.route('/login')
   .post(UsersController.login)
 
 /**
+ * Routes
+ *   GET,POST /users/logout
+ */
+
+router.route('/logout')
+  .get(UsersController.logout)
+  .post(UsersController.logout)
+
+/**
  * Export router
  */
 
